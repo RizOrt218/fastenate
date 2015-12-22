@@ -1,5 +1,24 @@
-body {
-  h1 {
-    background-color: #fff;
+// PROCESS
+// 1. Set basic variables & media query ranges
+// 2. Style large blocks with bg colors for layout
+// 3. Get general layout elements (block) sized for all media queries
+// 4. Modify general layout elements with &
+// 5. Secondary features grid (S --> L)
+// 6. Typography & Image Sizes
+// 7. Refactor the SCSS to make it dryer & simpler.
+// 8. Set variables for common values.
+
+//3 layout elements
+
+.header {
+  background-color: pink;
+  height: 100px;
+  width: 100%;
+
+  .logo {
+    background-color: orange;
+    height: 100px;
+    width: 50%;
+    margin: auto;
   }
 }
