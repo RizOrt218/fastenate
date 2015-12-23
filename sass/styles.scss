@@ -30,11 +30,16 @@ body {
   height: 40px;
   background-color: #424244;
 
-  span {
+  div {
     margin: auto;
     font-family: Oswald;
   }
 }
+
+.navigationButton:hover {
+  background-color: #8C8D90;
+}
+
 .header {
   background-color: white;
 
@@ -50,13 +55,49 @@ body {
   flex-flow: row wrap;
   height: 100%;
 
-  .conImage {
-    background-color: green;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-  }
 }
 
+.conImage {
+  background-color: green;
+  height: 300px;
+  width: 100%;
+  margin: auto;
+}
 
+.conTitle {
+  background-color: yellow;
+  height: 40px;
+  width: 100%;
+  margin-top: 6px;
+}
 
+.infoBar {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 6px;
+  width: 100%;
+
+  .conAuthor {
+    flex: 1 0 30%;
+    background-color: blue;
+    margin: auto;
+    height: 20px;
+    width: 100%;
+  }
+
+  .conCreated {
+    flex: 0 0 30%;
+    background-color: pink;
+    margin: auto;
+    height: 20px;
+    width: 100%;
+  }
+
+  .conViews {
+    flex: 1 0 30%;
+    background-color: green;
+    margin: auto;
+    height: 20px;
+    width: 100%;
+  }
+}

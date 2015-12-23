@@ -9,35 +9,66 @@ window.onload = function () {
   var dataChild = data.data.children;
   var thumbnail = dataChild[randomButton].data.thumbnail;
   var title = dataChild[randomButton].data.title;
+  var author = dataChild[randomButton].data.author;
+  var score = dataChild[randomButton].data.score;
   var description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quos nostrum itaque, quae ipsa, obcaecati, nemo rerum facere eos veritatis iure accusantium esse aut illo iste eligendi tempora natus consectetur.";
-//=================================================
-
+//================= main =====================
   var contentBlock = $('<div>'); //div for one whole block
     contentBlock
       .addClass('contentBlock')
     ;
+    $(document.body).append(contentBlock);
 
-  var conImage = $('<div><img src="'+thumbnail+'" /></div>');
+//================= image =====================
+  //var conImage = $('<div><img src="'+thumbnail+'" /></div>');//div for image
+  var conImage = $('<div>');
     conImage
       .addClass( 'conImage' )
     ;
     contentBlock.append(conImage);
-
-  var conTitle = $('<div><h3>conTitle</h3></div>');
+//================== title ====================
+  //var conTitle = $('<div><h3>conTitle</h3></div>');//div for title
+  var conTitle = $('<div>');
     conTitle
       .addClass( 'conTitle' )
     ;
-    contentBlock.append(title);
-
-  var conAuthor = $('<div>');
-    conAuthor
-      .addClass('conAuthor')
+    contentBlock.append(conTitle);
+//========= div for author/create/views =======
+  var infoBar = $('<div>');
+    infoBar
+      .addClass('infoBar')
     ;
-    contentBlock.append(conAuthor, "just a placement");
+    contentBlock.append(infoBar);
+//================== author ===================
+  var conAuthor = $('<div>'); //div for author
+    conAuthor
+      .addClass('conAuthor').text('BLUE')
+    ;
+    infoBar.append(conAuthor);
+    //infoBar.append(conAuthor, "just a placement");
 
-  var conDescription = $('<div>');
-    contentBlock.append(description);
+//================== created ==================
 
+  var conCreated = $('<div>');
+    conCreated
+      .addClass('conCreated').text('PINK')
+    ;
+    infoBar.append(conCreated);
+//================== views ====================
+
+  var conViews = $('<div>');
+    conViews
+      .addClass('conViews').text('GREEN')
+    ;
+    infoBar.append(conViews);
+
+//=============== description =================
+  // var conDescription = $('<div>'); // div for description
+  //   infoBar.append(description);
+
+  for ( var i = 0; i < 6; i++ ) {
+
+  }
   $('.mainContent').append(contentBlock); //appending whole block in main
 
 
