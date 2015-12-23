@@ -9,9 +9,12 @@
 // 8. Set variables for common values.
 
 //3 layout elements
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 * {
   margin: 0;
-  box-sizing: border-box;
+  // box-sizing: border-box;
 }
 
 $medium: "only screen and (min-width:600px)";
@@ -21,34 +24,37 @@ body {
   background-color: #9B401D;
 }
 
+.navi {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 40px;
+  background-color: #424244;
 
-.header {
-  background-color: pink;
-  height: 100px;
-
-  .logo {
-    background-color: orange;
-    height: 100px;
-    width: 50%;
+  span {
     margin: auto;
+    font-family: Oswald;
   }
 }
-.mainContent {
-  background-color: pink;
-  margin: 5%;
+.header {
+  background-color: white;
 
-  .contentBlock {
-    background-color: orange;
-    padding: 20px;
-    margin-top: 2%;
+  .logo {
   }
+}
+
+.contentBlock {
+  background-color: white;
+  padding: 20px;
+  margin: 2%;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
 
   .conImage {
-    background-color: pink;
-  }
-
-  .conTitle {
-    font-family: 'Lato Regular', Arial, Tahoma;
+    background-color: green;
+    height: 100%;
+    width: 100%;
+    margin: auto;
   }
 }
 
