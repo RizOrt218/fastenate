@@ -9,11 +9,22 @@
 // 8. Set variables for common values.
 
 //3 layout elements
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$medium: "only screen and (min-width:600px)";
+$large: "only screen and (min-width:900px)";
+
+body {
+  background-color: #9B401D;
+}
+
 
 .header {
   background-color: pink;
   height: 100px;
-  width: 100%;
 
   .logo {
     background-color: orange;
@@ -22,3 +33,24 @@
     margin: auto;
   }
 }
+.mainContent {
+  background-color: pink;
+  margin: 5%;
+
+  .contentBlock {
+    background-color: orange;
+    padding: 20px;
+    margin-top: 2%;
+  }
+
+  .conImage {
+    background-color: pink;
+  }
+
+  .conTitle {
+    font-family: 'Lato Regular', Arial, Tahoma;
+  }
+}
+
+
+
