@@ -13,6 +13,8 @@ window.onload = function () {
   var score = dataChild[randomButton].data.score;
   var description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quos nostrum itaque, quae ipsa, obcaecati, nemo rerum facere eos veritatis iure accusantium esse aut illo iste eligendi tempora natus consectetur.";
 //================= main =====================
+ for ( var i = 0; i < 6; i++ ) {
+
   var contentBlock = $('<div>'); //div for one whole block
     contentBlock
       .addClass('contentBlock')
@@ -63,13 +65,15 @@ window.onload = function () {
     infoBar.append(conViews);
 
 //=============== description =================
-  // var conDescription = $('<div>'); // div for description
-  //   infoBar.append(description);
 
-  for ( var i = 0; i < 6; i++ ) {
+  var conDescription = $('<div>'); // div for description
+    conDescription
+      .addClass('conDescription')
+    ;
+    contentBlock.append(conDescription);
 
-  }
   $('.mainContent').append(contentBlock); //appending whole block in main
+}
 
 
 });
