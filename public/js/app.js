@@ -8,11 +8,12 @@ window.onload = function () {
  for ( var i = 0; i < 6; i++ ) {
 
   var randomButton = Math.floor(Math.random()*50);
-  var dataChild = data.data.children;
-  var thumbnail = dataChild[randomButton].data.thumbnail;
-  var title = dataChild[randomButton].data.title;
-  var author = dataChild[randomButton].data.author;
-  var score = dataChild[randomButton].data.score;
+  var dataChild = data.data.children[randomButton].data;
+  var thumbnail = dataChild.thumbnail;
+  var title = dataChild.title;
+  var author = dataChild.author;
+  var created = moment( dataChild.created, 'X').fromNow();
+  var score = dataChild.score;
   var description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quos nostrum itaque, quae ipsa, obcaecati, nemo rerum facere eos veritatis iure accusantium esse aut illo iste eligendi tempora natus consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor enim expedita harum alias repudiandae maiores fugit nemo libero odit sequi, consequatur mollitia cupiditate, dignissimos commodi a, cum aut accusamus culpa.";
 //================= main/block wrapper ========
 
@@ -62,9 +63,10 @@ window.onload = function () {
 
   var conCreated = $('<li>');
     conCreated
-      .addClass('conCreated').text('PINK')
+      .addClass('conCreated')
     ;
     infoBar.append(conCreated);
+    conCreated.append(created);
 
 //================== views ====================
 

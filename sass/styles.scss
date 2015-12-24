@@ -17,6 +17,7 @@
   box-sizing: border-box;
 }
 
+$small: "only screen and (min-width:350px)";
 $medium: "only screen and (min-width:700px)";
 $large: "only screen and (min-width:900px)";
 
@@ -30,7 +31,7 @@ body {
   height: 50px;
   background-color: #424244;
 
-  div {
+  .navigationButton {
     margin: auto;
     font-family: Oswald;
   }
@@ -48,19 +49,21 @@ body {
   display: flex;
   flex-flow: row wrap;
   padding-top: 2%;
+
+  @media #{ $medium } {
+    flex: 0 0 400px;
+  }
 }
 
 .contentBlock {
-  flex: 0 0 460px;
+
+  flex: 0 0 700px;
   background-color: white;
   box-shadow: 5px 5px 5px #424244;
   padding: 20px;
   margin: auto;
   margin-top: 10px;
 
-  // @media #{ $medium } {
-  //   width: 320px;
-  // }
 
   //============== my image
 
@@ -74,7 +77,7 @@ body {
   .conTitle {
     font-family: 'Oswald';
     font-size: 25px;
-    margin-top: 6px;
+    margin-top: 4px;
   }
 
   //=============== my <ul>
@@ -86,6 +89,7 @@ body {
     font-family: 'Lato';
     font-size: 18px;
     color: #8C8D90;
+    height: 30px;
     padding: 0;
     margin-left: 0;
 
@@ -100,15 +104,20 @@ body {
   }
 
 .textBlock {
-  background-color: pink;
-  height: 50px;
   margin-top: 18px;
   margin-bottom: 10px;
+  overflow: hidden;
 
-  .conDescription {
+  div {
     font-family: 'Lato';
-    text-overflow: scroll;
+    font-size: 18px;
+    height: 48px;
   }
+
 }
+  div:hover {
+    height: 100%;
+    overflow: visible;
+  }
 
 }
