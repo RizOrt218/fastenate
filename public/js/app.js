@@ -1,10 +1,8 @@
-
-
 window.onload = function () {
   $.getJSON( './api/random.json', function(data) {
     console.log(data);
 
-//================ data ===========================
+//================ data =======================
  for ( var i = 0; i < 6; i++ ) {
 
   var randomButton = Math.floor(Math.random()*50);
@@ -15,8 +13,8 @@ window.onload = function () {
   var created = moment( dataChild.created, 'X').fromNow();
   var score = dataChild.score;
   var description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quos nostrum itaque, quae ipsa, obcaecati, nemo rerum facere eos veritatis iure accusantium esse aut illo iste eligendi tempora natus consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor enim expedita harum alias repudiandae maiores fugit nemo libero odit sequi, consequatur mollitia cupiditate, dignissimos commodi a, cum aut accusamus culpa.";
-//================= main/block wrapper ========
 
+//================= main/block wrapper ========
 
   var contentBlock = $('<div>'); //div for one whole block
     contentBlock
@@ -42,7 +40,7 @@ window.onload = function () {
     contentBlock.append(conTitle);
     conTitle.append(title);
 
-//========= ul for author/create/views =======
+//========= ul for author/create/views ========
 
   var infoBar = $('<ul>');
     infoBar
@@ -50,7 +48,7 @@ window.onload = function () {
     ;
     contentBlock.append(infoBar);
 
-//================== author ===================
+//================= author ====================
 
   var conAuthor = $('<li>'); //div for author
     conAuthor
@@ -59,7 +57,7 @@ window.onload = function () {
     infoBar.append(conAuthor);
     conAuthor.append('by ' + author);
 
-//================== created ==================
+//================= created ===================
 
   var conCreated = $('<li>');
     conCreated
@@ -77,7 +75,7 @@ window.onload = function () {
     infoBar.append(conViews);
     conViews.append(score + " views");
 
-//============= div for textBox ================
+//============= div for textBox ===============
 
   var textBlock = $('<div>');
     textBlock

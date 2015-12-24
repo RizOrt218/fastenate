@@ -13,9 +13,12 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
-$small: "only screen and (min-width:350px)";
-$medium: "only screen and (min-width:700px)";
-$large: "only screen and (min-width:900px)";
+@mixin screen {
+
+  $small: "only screen and (max-width:350px)";
+  $medium: "only screen and (max-width:700px)";
+  $large: "only screen and (max-width:900px)";
+}
 
 body {
   background-color: #AF5244;
@@ -46,9 +49,9 @@ body {
   flex-flow: row wrap;
   padding-top: 2%;
 
-  @media #{ $medium } {
-    flex: 0 0 400px;
-  }
+  // @media #{ $medium } {
+  //   flex: 0 0 400px;
+  // }
 }
 
 .contentBlock {
