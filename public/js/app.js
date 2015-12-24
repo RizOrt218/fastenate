@@ -5,15 +5,17 @@ window.onload = function () {
     console.log(data);
 
 //================ data ===========================
+ for ( var i = 0; i < 6; i++ ) {
+
   var randomButton = Math.floor(Math.random()*50);
   var dataChild = data.data.children;
   var thumbnail = dataChild[randomButton].data.thumbnail;
   var title = dataChild[randomButton].data.title;
   var author = dataChild[randomButton].data.author;
   var score = dataChild[randomButton].data.score;
-  var description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quos nostrum itaque, quae ipsa, obcaecati, nemo rerum facere eos veritatis iure accusantium esse aut illo iste eligendi tempora natus consectetur.";
+  var description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quos nostrum itaque, quae ipsa, obcaecati, nemo rerum facere eos veritatis iure accusantium esse aut illo iste eligendi tempora natus consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor enim expedita harum alias repudiandae maiores fugit nemo libero odit sequi, consequatur mollitia cupiditate, dignissimos commodi a, cum aut accusamus culpa.";
 //================= main/block wrapper ========
- for ( var i = 0; i < 6; i++ ) {
+
 
   var contentBlock = $('<div>'); //div for one whole block
     contentBlock
@@ -23,16 +25,15 @@ window.onload = function () {
 
 //================= image =====================
 
-  //var conImage = $('<div><img src="'+thumbnail+'" /></div>');//div for image
-  var conImage = $('<div><img src="'+thumbnail+'" /></div>');
+  var conImage = $('<div>');
     conImage
       .addClass( 'conImage' )
     ;
     contentBlock.append(conImage);
+    conImage.append('<img src="'+thumbnail+'" />');
 
 //================== title ====================
 
-  //var conTitle = $('<div><h3>conTitle</h3></div>');//div for title
   var conTitle = $('<div>');
     conTitle
       .addClass( 'conTitle' )
@@ -74,18 +75,25 @@ window.onload = function () {
     infoBar.append(conViews);
     conViews.append(score + " views");
 
+//============= div for textBox ================
+
+  var textBlock = $('<div>');
+    textBlock
+      .addClass('textBlock')
+    ;
+    contentBlock.append(textBlock);
+
 //=============== description =================
 
   var conDescription = $('<div>'); // div for description
     conDescription
       .addClass('conDescription')
     ;
-    contentBlock.append(conDescription);
+    textBlock.append(conDescription);
     conDescription.append(description);
 
   $('.mainContent').append(contentBlock); //appending whole block in main
 }
-
 
 });
 

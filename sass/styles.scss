@@ -21,13 +21,13 @@ $medium: "only screen and (min-width:700px)";
 $large: "only screen and (min-width:900px)";
 
 body {
-  background-color: #9B401D;
+  background-color: #AF5244;
 }
 
 .navi {
   display: flex;
   flex-flow: row nowrap;
-  height: 40px;
+  height: 50px;
   background-color: #424244;
 
   div {
@@ -42,9 +42,6 @@ body {
 
 .header {
   background-color: white;
-
-  .logo {
-  }
 }
 
 .mainContent {
@@ -54,7 +51,7 @@ body {
 }
 
 .contentBlock {
-  flex: 0 0 96%;
+  flex: 0 0 460px;
   background-color: white;
   box-shadow: 5px 5px 5px #424244;
   padding: 20px;
@@ -65,20 +62,26 @@ body {
   //   width: 320px;
   // }
 
-  .conImage {
-    background-color: green;
-    height: 300px;
+  //============== my image
+
+  .conImage img {
+    height: 250px;
+    width: 100%;
   }
+
+  //============= block title
 
   .conTitle {
     font-family: 'Oswald';
     font-size: 25px;
     margin-top: 6px;
   }
-//================= my <ul>
-  .infoBar {
+
+  //=============== my <ul>
+
+  ul {
     display: flex;
-    flex: row nowrap;
+    flex: row wrap;
     margin-top: 5px;
     font-family: 'Lato';
     font-size: 18px;
@@ -86,25 +89,26 @@ body {
     padding: 0;
     margin-left: 0;
 
-//================== <li> nested in <ul>
-    .conAuthor {
+    //====== <li> nested in <ul>
+
+    li {
       flex: 1;
+    }
+    .conAuthor {
       list-style: none;
     }
-
-    .conCreated {
-      flex: 1;
-      background-color: pink;
-    }
-
-    .conViews {
-
-    }
-  }
-    .conDescription {
-      font-family: 'Lato';
-      margin-top: 18px;
-      margin-bottom: 10px;
-    }
   }
 
+.textBlock {
+  background-color: pink;
+  height: 50px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+
+  .conDescription {
+    font-family: 'Lato';
+    text-overflow: scroll;
+  }
+}
+
+}
