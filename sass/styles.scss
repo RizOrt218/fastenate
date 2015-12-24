@@ -9,13 +9,9 @@
 // 8. Set variables for common values.
 
 //3 layout elements
+@import "partials/reset";
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Lato);
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
 
 $small: "only screen and (min-width:350px)";
 $medium: "only screen and (min-width:700px)";
