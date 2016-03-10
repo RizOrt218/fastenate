@@ -25,7 +25,6 @@ body {
 
 .topBarNavi {
   display: flex;
-  flex-flow: row nowrap;
   margin: auto;
   color: #818285;
   font-size: 18px;
@@ -35,12 +34,10 @@ body {
 
 .navi {
   border-left: 1px solid #818285;
-  // background-color: pink;
   text-align: center;
   vertical-align: middle;
   width: 100%;
   line-height: 50px;
-  display: inline;
   font-family: Oswald;
 }
 
@@ -54,6 +51,7 @@ body {
 }
 
 .mainContent {
+  // background-color: pink;
   display: flex;
   flex-flow: row wrap;
   padding-top: 2%;
@@ -64,10 +62,11 @@ body {
 }
 
 .contentBlock {
-
-  flex: 0 0 360px;
+  // border: 2px solid green;
+  // flex: 0 0 360px;
+  width: 350px;
   background-color: white;
-  box-shadow: 5px 5px 5px #424244;
+  box-shadow: 3px 2px 15px #424244;
   padding: 20px;
   margin: auto;
   margin-top: 10px;
