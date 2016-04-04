@@ -8,178 +8,212 @@
 // 7. Refactor the SCSS to make it dryer & simpler.
 // 8. Set variables for common values.
 
-//3 layout elements
+// //3 layout elements
 @import "partials/reset";
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
-@mixin screen {
-  $small: "only screen and (max-width:350px)";
-  $medium: "only screen and (max-width:700px)";
-  $large: "only screen and (max-width:900px)";
+// $small: "only screen and (min-width:350px)";
+$medium: "only screen and (min-width:650px)";
+$large: "only screen and (min-width:900px)";
+
+// color variables
+$myOrange: #F1592A;
+$barColor: #424244;
+
+* {
+  box-sizing: border-box;
+  font-style: Oswald;
 }
 
 body {
   background-image: url('/assets/bg.jpg');
 }
 
+a {
+  text-decoration: none;
+  color: #818285;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $myOrange;
+
+}
+
 .topBarNavi {
   display: flex;
-  margin: auto;
-  color: #818285;
-  font-size: 18px;
-  height: 50px;
-  background-color: #424244;
+  font-size: 16px;
+  height: 40px;
+  background-color: $barColor;
+  -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+     -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+          box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+
+  @media #{$medium} {
+    padding: 0% 30% 0% 30%;
+  }
+  @media #{$large} {
+    padding: 0% 35% 0% 35%;
+  }
 }
 
 .navi {
   border-left: 1px solid #818285;
   text-align: center;
-  vertical-align: middle;
   width: 100%;
-  line-height: 50px;
+  line-height: 40px;
   font-family: Oswald;
-}
 
-.navi:hover {
-  background-color: #8C8D90;
-  color: #424244;
+  @media #{$medium}, #{$large} {
+    border: none;
+  justify-content: space-between;
+
+  }
 }
 
 .header {
   background-color: white;
   display: flex;
-  // margin: auto;
-  // vertical-align: middle;
 }
 
 .logo {
   background-image: url("/assets/logo.svg");
-  background-size: 120px 60px;
-  flex: 0 0 80%;
+  background-size: 120px;
+  flex: 0 0 95%;
   background-position: left center;
   background-repeat: no-repeat;
   height: 65px;
   margin-left:5px;
-  // @media #{$medium}{
-  //   background-position: center center;
-  // }
+
+  @media #{$medium}, #{$large}{
+    background-size: 120px;
+    background-position: center;
+    margin: auto;
+  }
 }
 
 .addIcon {
-  // position:absolute;
-  top:15px;
+  position: absolute;
+  top:20px;
   right:15px;
-  background-color: #FFFFFF;
-  border: 2px double #f98f35;
+  background-color: white;
+  border: 1px solid $myOrange;
   height: 25px;
   width: 25px;
-  margin: auto;
-
-
-  p {
-    font-family: Lato;
-    line-height:23px;
-    text-align: center;
-    font-size: 30px;
-    color: #b30000;
-  }
+  line-height:23px;
+  text-align: center;
+  font-size: 30px;
+  color: #b30000;
 }
 
+.addIcon:hover {
+  background-color: $myOrange;
+  color: white;
+}
 
-
-// .logo {
-//   background-image: url('/assets/logo.svg');
-//   background-repeat: no-repeat;
-//   flex: 0 0 90%;
-//   background-position: left center;
-//   // border: 2px solid black;
-//   line-height: 10px;
-//   // vertical-align: middle;
-// }
-// .addIcon {
-//   font-size: 45px;
-//   background-color: pink;
-//   margin: auto;
-//   // padding:
-//   border: 2px solid #AF5244;
-// }
-
-.mainContent {
-  // background-color: pink;
+#mainContent {
   display: flex;
   flex-flow: row wrap;
   padding-top: 2%;
+  justify-content: space-between;
 
-  // @media #{ $medium } {
-  //   flex: 0 0 400px;
-  // }
+  @media #{ $medium } {
+    margin: auto;
+    width: 800px;
+  }
+
+  @media #{$large} {
+    margin: auto;
+  }
 }
 
-.contentBlock {
-  // border: 2px solid green;
-  // flex: 0 0 360px;
-  width: 350px;
-  background-color: white;
-  box-shadow: 3px 2px 15px #424244;
-  padding: 20px;
+.blockContent {
+  width: 360px;
+  height: 50vh;
   margin: auto;
-  margin-top: 10px;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 3px 2px 15px $barColor;
+  border: 4px solid white;
+  flex: 0 0 90%;
 
 
-  //============== my image
-
-  .conImage img {
-    height: 250px;
-    width: 100%;
+  @media #{ $medium } {
+    flex: 0 1 48%;
   }
-
-  //============= block title
-
-  .conTitle {
-    font-family: 'Oswald';
-    font-size: 25px;
-    margin-top: 4px;
-  }
-
-  //=============== my <ul>
-
-  ul {
-    display: flex;
-    flex: row nowrap;
-    margin-top: 5px;
-    font-family: 'Lato';
-    font-size: 18px;
-    color: #8C8D90;
-    height: 30px;
-    // padding: 0;
-    // margin-left: 0;
-
-    //====== <li> nested in <ul>
-
-    li {
-      flex: 1;
-    }
-    .conAuthor {
-      // list-style: none;
-    }
-  }
-
-.textBlock {
-  margin-top: 18px;
-  margin-bottom: 10px;
-  overflow: hidden;
-
-  div {
-    font-family: 'Lato';
-    font-size: 18px;
-    height: 48px;
-  }
-
 }
-  div:hover {
-    height: 100%;
-    overflow: visible;
+
+.blockContent:hover {
+  border: 4px solid lighten($myOrange, 10%);
+}
+
+.blockContent img {
+  height: 25vh;
+  width: 100%;
+}
+
+
+h1 {
+  font-size: 25px;
+  margin-top: 4px;
+  padding: 5px 0px 8px 0px;
+  height: 50px;
+  overflow: hidden;
+}
+
+p {
+  font-family: Lato;
+}
+
+.infoBar {
+  display: flex;
+  padding-bottom: 15px;
+  font-family: Lato;
+
+  li {
+    flex-grow: 1;
+    color: #8C8D90;
   }
+}
+
+.footer {
+  display: none;
+
+  @media #{$large}{
+  background-color: $barColor;
+  position: fixed;
+  bottom: 0px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0,0,0,0.8);
+
+
+  .fb {
+    background-image: url("../assets/facebook_grey.svg");
+    width:25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 0 0 3%;
+  }
+
+  .ig {
+    background-image: url("../assets/instagram_grey.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+    width:25px;
+    height: 25px;
+    flex: 0 0 3%;
+  }
+
+  .ig:hover {
+    background-image: url("../assets/instagram_orange.svg");
+  }
+}
 
 }

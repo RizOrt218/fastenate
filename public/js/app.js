@@ -1,100 +1,51 @@
-window.onload = function () {
-  $.getJSON( './api/random.json', function(data) {
-    console.log(data);
 
-//================ data =======================
- for ( var i = 0; i < 6; i++ ) {
+  var populatePage = function( data ){
+    console.log("consoleLogging", data);
+    for( var i = 0; i < data.data.children.length; i++ ) {
 
-  var randomButton = Math.floor(Math.random()*50);
-  var dataChild = data.data.children[randomButton].data;
-  var thumbnail = dataChild.thumbnail;
-  var title = dataChild.title;
-  var author = dataChild.author;
-  var created = moment( dataChild.created, 'X').fromNow();
-  var score = dataChild.score;
-  var description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quos nostrum itaque, quae ipsa, obcaecati, nemo rerum facere eos veritatis iure accusantium esse aut illo iste eligendi tempora natus consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor enim expedita harum alias repudiandae maiores fugit nemo libero odit sequi, consequatur mollitia cupiditate, dignissimos commodi a, cum aut accusamus culpa.";
+      var randomButton = Math.floor(Math.random()*50);
+      var dataInfo = data.data.children[i].data;
 
-//================= main/block wrapper ========
+      var contentDiv = $( "<div/>");
+        contentDiv.attr( 'id', 'block' + i );
+        contentDiv.attr( 'class', 'blockContent' );
 
-  var contentBlock = $('<div>'); //div for one whole block
-    contentBlock
-      .addClass('contentBlock')
-    ;
-    $(document.body).append(contentBlock);
+      var image = $('<img/>');
+        image.attr( 'src', dataInfo.url );
+      var title = '<h1>' + dataInfo.title + '</h1>';
 
-//================= image =====================
+      // info content
+      var author = '<li>' + 'by ' + dataInfo.author + '</li>';
+      var age    = '<li>' + '•&nbsp&nbsp' + moment(dataInfo.created, 'X').fromNow() + '</li>';
+      var views  = '<li>' + '•&nbsp&nbsp' + dataInfo.score + ' views' + '</li>';
 
-  var conImage = $('<div>');
-    conImage
-      .addClass( 'conImage' )
-    ;
-    contentBlock.append(conImage);
-    conImage.append('<img src="'+thumbnail+'" />');
+      var infoBar = $('<ul>');
+        infoBar.addClass('infoBar');
+        infoBar.append( author, age, views );
 
-//================== title ====================
+      var description = '<p>' + 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis cursus augue, a consectetur tellus. Sed placerat urna ac orci egestas, eget malesuada ex malesuada...' + '</p>' ;
 
-  var conTitle = $('<div>');
-    conTitle
-      .addClass( 'conTitle' )
-    ;
-    contentBlock.append(conTitle);
-    conTitle.append(title);
+      $( mainContent ).append( contentDiv );
+      $( '#block' + i ).append( image, title, infoBar, description );
+    }
+  };
+window.onload = function() {
 
-//========= ul for author/create/views ========
+  $.getJSON( 'https://www.reddit.com/r/funny.json', populatePage );
 
-  var infoBar = $('<ul>');
-    infoBar
-      .addClass('infoBar')
-    ;
-    contentBlock.append(infoBar);
+  document.getElementById( 'random' ).addEventListener( 'click', function(){
+    document.getElementById( 'mainContent' ).innerHTML = '';
+    $.getJSON( "http://www.reddit.com/r/funny/.json", populatePage );
+  });
 
-//================= author ====================
+  document.getElementById( 'myBoards' ).addEventListener( 'click', function(){
+    document.getElementById( 'mainContent' ).innerHTML = '';
+    $.getJSON( "http://www.reddit.com/r/gifs/.json", populatePage);
+  });
 
-  var conAuthor = $('<li>'); //div for author
-    conAuthor
-      .addClass('conAuthor')
-    ;
-    infoBar.append(conAuthor);
-    conAuthor.append('by ' + author);
-
-//================= created ===================
-
-  var conCreated = $('<li>');
-    conCreated
-      .addClass('conCreated')
-    ;
-    infoBar.append(conCreated);
-    conCreated.append(created);
-
-//================== views ====================
-
-  var conViews = $('<li>');
-    conViews
-      .addClass('conViews')
-    ;
-    infoBar.append(conViews);
-    conViews.append(score + " views");
-
-//============= div for textBox ===============
-
-  var textBlock = $('<div>');
-    textBlock
-      .addClass('textBlock')
-    ;
-    contentBlock.append(textBlock);
-
-//=============== description =================
-
-  var conDescription = $('<div>'); // div for description
-    conDescription
-      .addClass('conDescription')
-    ;
-    textBlock.append(conDescription);
-    conDescription.append(description);
-
-  $('.mainContent').append(contentBlock); //appending whole block in main
-}
-
-});
+  document.getElementById( 'getTheApp' ).addEventListener( 'click', function(){
+    document.getElementById( 'mainContent' ).innerHTML = '';
+    $.getJSON( "http://www.reddit.com/r/videos/.json", populatePage );
+  });
 
 };
