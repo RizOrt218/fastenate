@@ -20,7 +20,7 @@
 }
 
 body {
-  background-color: #AF5244;
+  background-image: url('/assets/bg.jpg');
 }
 
 .topBarNavi {
@@ -48,7 +48,62 @@ body {
 
 .header {
   background-color: white;
+  display: flex;
+  // margin: auto;
+  // vertical-align: middle;
 }
+
+.logo {
+  background-image: url("/assets/logo.svg");
+  background-size: 120px 60px;
+  flex: 0 0 80%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 65px;
+  margin-left:5px;
+  // @media #{$medium}{
+  //   background-position: center center;
+  // }
+}
+
+.addIcon {
+  // position:absolute;
+  top:15px;
+  right:15px;
+  background-color: #FFFFFF;
+  border: 2px double #f98f35;
+  height: 25px;
+  width: 25px;
+  margin: auto;
+
+
+  p {
+    font-family: Lato;
+    line-height:23px;
+    text-align: center;
+    font-size: 30px;
+    color: #b30000;
+  }
+}
+
+
+
+// .logo {
+//   background-image: url('/assets/logo.svg');
+//   background-repeat: no-repeat;
+//   flex: 0 0 90%;
+//   background-position: left center;
+//   // border: 2px solid black;
+//   line-height: 10px;
+//   // vertical-align: middle;
+// }
+// .addIcon {
+//   font-size: 45px;
+//   background-color: pink;
+//   margin: auto;
+//   // padding:
+//   border: 2px solid #AF5244;
+// }
 
 .mainContent {
   // background-color: pink;
