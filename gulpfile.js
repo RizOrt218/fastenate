@@ -22,7 +22,7 @@ gulp.task('compile-sass', function (){
 });
 
 gulp.task('html', function (){
-  return gulp.src('./public/index.html')
+  return gulp.src('.index.html')
     .pipe(connect.reload());
 });
 
