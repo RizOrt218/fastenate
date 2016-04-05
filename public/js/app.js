@@ -23,7 +23,11 @@
         infoBar.addClass('infoBar');
         infoBar.append( author, age, views );
 
-      var description = '<p>' + 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis cursus augue, a consectetur tellus. Sed placerat urna ac orci egestas, eget malesuada ex malesuada...' + '</p>' ;
+      var descPar = '<p>' + 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis cursus augue, a consectetur tellus. Sed placerat urna ac orci egestas, eget malesuada ex malesuada...' + '</p>' ;
+
+      var description = $('<div/>');
+        description.addClass('description');
+        description.append( descPar );
 
       $( mainContent ).append( contentDiv );
       $( '#block' + i ).append( image, title, infoBar, description );
