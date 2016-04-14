@@ -52,7 +52,9 @@ table {
   font-style: Oswald; }
 
 body {
-  background-image: url("/assets/bg.jpg"); }
+  /*background-image: url("/assets/bg.jpg"); */
+  background-color: #AD431B;
+}
 
 a {
   text-decoration: none;
