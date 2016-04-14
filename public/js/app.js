@@ -43,12 +43,12 @@ window.onload = function() {
 
   document.getElementById( 'myBoards' ).addEventListener( 'click', function(){
     document.getElementById( 'mainContent' ).innerHTML = '';
-    $.getJSON( "/api/my_boards.json", populatePage);
+    $.getJSON( "https://www.reddit.com/r/gaming/.json", populatePage);
   });
 
   document.getElementById( 'getTheApp' ).addEventListener( 'click', function(){
     document.getElementById( 'mainContent' ).innerHTML = '';
-    $.getJSON( "http://www.reddit.com/r/videos/.json", populatePage );
+    $.getJSON( "https://www.reddit.com/r/mildlyinteresting/.json", populatePage );
   });
 
 };
