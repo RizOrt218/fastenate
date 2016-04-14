@@ -1,6 +1,5 @@
 
   var populatePage = function( data ){
-    console.log("consoleLogging", data);
     for( var i = 0; i < data.data.children.length; i++ ) {
 
       var randomButton = Math.floor(Math.random()*50);

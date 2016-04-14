@@ -1,0 +1,217 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box;
+  font-style: Oswald; }
+
+body {
+  background-image: url("../assets/bg.jpg"); }
+
+a {
+  text-decoration: none;
+  color: #818285; }
+
+a:hover {
+  text-decoration: none;
+  color: #F1592A; }
+
+.topBarNavi {
+  display: flex;
+  font-size: 16px;
+  height: 40px;
+  background-color: #424244;
+  -webkit-box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, 0.8); }
+  @media only screen and (min-width: 550px) {
+    .topBarNavi {
+      padding: 0% 30% 0% 30%; } }
+  @media only screen and (min-width: 900px) {
+    .topBarNavi {
+      padding: 0% 35% 0% 35%; } }
+
+#myBoards {
+  border-left: 1px solid #818285;
+  border-right: 1px solid #818285; }
+
+.navi {
+  text-align: center;
+  width: 100%;
+  line-height: 40px;
+  font-family: Oswald; }
+  @media only screen and (min-width: 550px), only screen and (min-width: 900px) {
+    .navi {
+      border: none;
+      justify-content: space-between; } }
+
+.header {
+  background-color: white;
+  display: flex; }
+
+.logo {
+  background-image: url("../assets/logo.svg");
+  background-size: 120px;
+  flex: 0 0 95%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 65px;
+  margin-left: 5px; }
+  @media only screen and (min-width: 550px), only screen and (min-width: 900px) {
+    .logo {
+      background-size: 120px;
+      background-position: center;
+      margin: auto; } }
+
+.addIcon {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  background-color: white;
+  border: 1px solid #F1592A;
+  height: 25px;
+  width: 25px;
+  line-height: 23px;
+  text-align: center;
+  font-size: 30px;
+  color: #b30000; }
+
+.addIcon:hover {
+  background-color: #F1592A;
+  color: white; }
+
+#mainContent {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2% 0% 2% 0%;
+  justify-content: space-between; }
+  @media only screen and (min-width: 550px) {
+    #mainContent {
+      margin: auto;
+      width: 800px; } }
+  @media only screen and (min-width: 900px) {
+    #mainContent {
+      margin: auto; } }
+
+.blockContent {
+  width: 360px;
+  height: auto;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 3px 2px 15px #424244;
+  border: 4px solid white;
+  flex: 0 0 90%; }
+  @media only screen and (min-width: 550px) {
+    .blockContent {
+      flex: 0 1 48%; } }
+
+.blockContent:hover {
+  border: 4px solid #f47e5a; }
+
+.blockContent img {
+  height: 25vh;
+  width: 100%; }
+
+h1 {
+  font-size: 25px;
+  margin-top: 4px;
+  padding: 5px 0px 8px 0px;
+  height: 50px;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.description {
+  font-family: Lato;
+  height: auto; }
+
+.infoBar {
+  display: flex;
+  padding-bottom: 15px;
+  font-family: Lato; }
+  .infoBar li {
+    color: #8C8D90;
+    width: 250px;
+    height: 30px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+.footer {
+  display: none; }
+  @media only screen and (min-width: 900px) {
+    .footer {
+      background-color: #424244;
+      position: fixed;
+      bottom: 0px;
+      height: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); }
+      .footer .fb {
+        background-image: url("../assets/facebook_grey.svg");
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+        flex: 0 0 3%; }
+      .footer .ig {
+        background-image: url("../assets/instagram_grey.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 25px;
+        height: 25px;
+        flex: 0 0 3%; }
+      .footer .ig:hover {
+        background-image: url("../assets/instagram_orange.svg"); } }

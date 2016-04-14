@@ -27,7 +27,8 @@ $barColor: #424244;
 }
 
 body {
-  background-image: url('/assets/bg.jpg');
+  background-image: url('../assets/bg.jpg');
+  // background-color: darken($myOrange, 25%);
 }
 
 a {
@@ -82,7 +83,7 @@ a:hover {
 }
 
 .logo {
-  background-image: url("/assets/logo.svg");
+  background-image: url("../assets/logo.svg");
   background-size: 120px;
   flex: 0 0 95%;
   background-position: left center;
