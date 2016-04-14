@@ -44,7 +44,7 @@ window.onload = function() {
 
   document.getElementById( 'myBoards' ).addEventListener( 'click', function(){
     document.getElementById( 'mainContent' ).innerHTML = '';
-    $.getJSON( "http://www.reddit.com/r/gifs/.json", populatePage);
+    $.getJSON( "/api/my_boards.json", populatePage);
   });
 
   document.getElementById( 'getTheApp' ).addEventListener( 'click', function(){
